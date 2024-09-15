@@ -17,8 +17,7 @@ It's the default shell on macOS.
     sudo apt install zsh
     ```
 
-> [!NOTE]
-> You can check if it's installed by running `zsh --version`.
+  Run `zsh --version` to check that it is installed correctly.
 
 - Change default shell to `zsh`
 
@@ -130,13 +129,30 @@ It adds features and more customization to `ls`.
   sudo apt install lsd
   ```
 
+- Set an alias to `lsd` by writing the following line in your `.zshrc` file
+
+  ```bash
+  alias ls='lsd'
+  ```
+
+> [!TIP]
+> Create and customize the aliases on your needs. See the [Aliases](#aliases) section.
+
 #### bat
 
 `bat` is an upgraded version of `cat`.
 It let you see the content of files in a human friendly way with features like syntax highlighting, git integration and number of lines.
 
-```bash
+- Using Homebrew
 
+```bash
+brew install bat
+```
+
+- Using APT on Linux (Debian, Ubuntu) or Windows (WSL)
+
+```bash
+sudo apt install bat
 ```
 
 #### fzf
@@ -144,27 +160,66 @@ It let you see the content of files in a human friendly way with features like s
 `fzf` is a command-line fuzzy finder.
 It let you search for files and commands in your terminal.
 
+- Using Homebrew
+
+```bash
+brew install fzf
+```
+
+> [!TIP]
+> Want to customize the theme of your `fzf`? Look at this: [fzf themes customizer](https://vitormv.github.io/fzf-themes/).
+
 #### btop
 
 `btop` is a graphical monitoring tool.
 
+- Using Homebrew
+
+```bash
+brew install btop
+```
+
 #### tldr
 
 `tldr` let you look up the documentation of commands in a more human friendly way.
+
+- Using Homebrew
+
+```bash
+brew install tldr
+```
 
 #### zellij
 
 `zellij` is a terminal multiplexer.
 It let you have multiple terminals in the same window using tabs and panels.
 
+- Using Homebrew
+
+```bash
+brew install zellij
+```
+
 #### atuin
 
 `atuin` is a command-line shell history manager.
+
+- Using Homebrew
+
+```bash
+brew install atuin
+```
 
 #### nvm
 
 `nvm` is a Node.js version manager.
 It let you easily switch between different versions of Node.js.
+
+- Using Homebrew
+
+```bash
+brew install nvm
+```
 
 ### Theme
 
@@ -172,11 +227,33 @@ It let you easily switch between different versions of Node.js.
 
 `spaceship` is a minimalist but stylish theme for oh-my-zsh.
 
+```bash
+git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+```
+
+Set `ZSH_THEME="spaceship"` in your `.zshrc` file.
+
 ## Configuration
 
 ### .zshrc
 
+<details>
+  <summary>Click to expand and see the code</summary>
+
+```bash
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="spaceship"
+
+```
+
+</details>
+
 ### Aliases
+
+### Setup Spaceship
 
 ## Sources
 

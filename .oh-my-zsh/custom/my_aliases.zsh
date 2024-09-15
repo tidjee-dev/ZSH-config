@@ -3,7 +3,6 @@
 #===================
 
 alias home='cd ~ && clear'
-alias hi='~/.local/bin/zellij'
 alias ls='lsd -lt --group-dirs=first --hyperlink=always'
 alias lsa='lsd -alt --group-dirs=first --hyperlink=always'
 alias lsr='lsd -ltR --group-dirs=first --hyperlink=always'
@@ -21,3 +20,9 @@ alias brewi='brew install'
 alias brews='brew search'
 alias brewupdate='brew update && brew upgrade && brew cleanup'
 alias brewrm='brew uninstall'
+alias nvmi='nvm install'
+alias nvmilts='nvmi --lts'
+alias nvmu='nvm use'
+alias nvmults='nvmu --lts'
+alias nvmrm='nvm uninstall'
+alias nvmrmlts='nvmrm --lts'
