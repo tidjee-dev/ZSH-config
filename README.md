@@ -17,8 +17,8 @@ It's the default shell on macOS.
     sudo apt install zsh
     ```
 
-  > [!note]
-  > You can check if it's installed by running `zsh --version`.
+> [!NOTE]
+> You can check if it's installed by running `zsh --version`.
 
 - Change default shell to `zsh`
 
