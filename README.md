@@ -242,13 +242,9 @@ Set `ZSH_THEME="spaceship"` in your `.zshrc` file.
 <details>
   <summary>Click to expand and see the code</summary>
 
-```bash
-export ZSH="$HOME/.oh-my-zsh"
-
-ZSH_THEME="spaceship"
-
-```
-
+  ```bash
+  source ~/.zshrc
+  ```
 </details>
 
 ### Aliases
