@@ -90,6 +90,11 @@ test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/bre
 ## Atuin ##
 eval "$(atuin init zsh --disable-up-arrow)"
 
+## Zellij ##
+eval "$(zellij setup --generate-auto-start zsh)"
+
+## TheFUCK ##
+eval $(thefuck --alias)
 #===============================
 #*        My launcher
 #===============================

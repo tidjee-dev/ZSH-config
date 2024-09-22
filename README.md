@@ -282,15 +282,15 @@ HIST_STAMPS="yyyy-mm-dd"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
-  zsh-completions
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-  docker
-  docker-compose
-  sudo
-  fzf
-)
+    git
+    zsh-completions
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    docker
+    docker-compose
+    sudo
+    fzf
+    )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -308,7 +308,7 @@ setopt hist_find_no_dups
 setopt hist_reduce_blanks
 
 if [ ! -f ~/.zsh_history ]; then
-  touch ~/.zsh_history
+    touch ~/.zsh_history
 fi
 
 ## LSD ##
@@ -335,11 +335,13 @@ test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/bre
 ## Atuin ##
 eval "$(atuin init zsh --disable-up-arrow)"
 
+## Zellij ##
+eval "$(zellij setup --generate-auto-start zsh)"
+
 #===============================
 #*        My launcher
 #===============================
 source $ZSH_CUSTOM/my_launcher.zsh
-
 ```
 
 </details>
@@ -359,10 +361,9 @@ alias ls='lsd -lt --group-dirs=first --hyperlink=always'
 alias lsa='lsd -alt --group-dirs=first --hyperlink=always'
 alias lsr='lsd -ltR --group-dirs=first --hyperlink=always'
 alias tree='lsd --tree --hyperlink=always'
-alias bat='batcat'
-alias cat='bat'
+alias cat='bat --paging=never'
 alias cls='clear'
-alias fzf='fzf --preview="batcat --color=always {}"'
+alias fzf='fzf --preview="bat --color=always {}"'
 alias nanofzf='nano $(fzf)'
 alias fd='fdfind'
 alias src='source ~/.zshrc'
@@ -431,6 +432,17 @@ SPACESHIP_EXIT_CODE_SHOW=true
 SPACESHIP_JOBS_SHOW=true
 SPACESHIP_CHAR_SYMBOL="❯"
 SPACESHIP_CHAR_SUFFIX=" "
+```
+
+</details>
+
+### Custom launcher
+
+<details>
+  <summary>Click to expand and see the config</summary>
+
+```bash
+
 ```
 
 </details>

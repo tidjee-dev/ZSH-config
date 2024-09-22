@@ -50,26 +50,18 @@ COMMAND="${GREEN}${UNDERLINE}"
 # ---------
 
 show_datetime() {
-    echo -e "${CYAN}$(date)${RESET}\n"
+    echo -e "\n${CYAN}$(date)${RESET}\n"
 }
 
-connectedAs() {
-    echo "${LABEL}Connected as:${RESET} ${YELLOW}$USER${RESET}@${MAGENTA}$(hostname)${RESET}\n"
+welcomeMessage() {
+    echo "Welcome back!\n"
+    echo "You are connected to ${MAGENTA}$HOSTNAME${RESET} as ${YELLOW}$USER${RESET}.\n"
+    echo "The current directory is ${BLUE}$(pwd)${RESET}.\n"
+    echo "${COMMAND}myHelp${RESET} - Show available commands and aliases.\n"
 }
 
 # Commands
 # --------
-
-system_info() {
-    echo "-----------------------"
-    echo -e "| ${TITLE}System Information:${RESET} |"
-    echo "-----------------------\n"
-    echo "${LABEL2}OS:${RESET} $(uname -srm)"
-    echo "${LABEL2}Uptime:${RESET} $(uptime -p)"
-    echo "${LABEL2}CPU Usage:${RESET} $(top -bn1 | grep 'Cpu(s)' | awk '{print $2 + $4}')%"
-    echo "${LABEL2}Memory Usage:${RESET} $(free -h | grep Mem | awk '{print $3 "/" $2}')\n"
-    echo "-----------------------\n"
-}
 
 myHelp() {
     echo "\n${TITLE}Available commands & aliases:${RESET}"
@@ -80,14 +72,12 @@ myHelp() {
 _commands() {
     echo "\n${SUBTITLE}Commands:${RESET}\n"
     echo "${COMMAND}myHelp${RESET} - Show this help message."
-    echo "${COMMAND}system_info${RESET} - Show system information."
     echo "${COMMAND}zellij${RESET} - Start zellij session (multi panels terminal)."
     echo "${COMMAND}tree${RESET} - List all files in current directory in a tree format."
     echo "${COMMAND}fzf${RESET} - Search files in current directory with preview using fzf."
     echo "${COMMAND}btop${RESET} - Show system information using btop."
-    echo "${COMMAND}fastfetch${RESET} - Show system information using fastfetch."
     echo "${COMMAND}lazygit${RESET} - Show git folder information using lazygit."
-    echo "${COMMAND}colorscript${RESET} - Show color schemes using colorscript."
+    echo "${COMMAND}lazydocker${RESET} - Show docker folder information using lazydocker."
     echo "${COMMAND}tldr${RESET} - Show help information using tldr."
 }
 
@@ -97,6 +87,7 @@ _aliases() {
     echo "${COMMAND}cls${RESET} - Clear the screen."
     echo "${COMMAND}lsa${RESET} - List all files in current directory, including hidden files."
     echo "${COMMAND}lsr${RESET} - List all files in current directory recursively."
+    echo "${COMMAND}tree${RESET} - List all files in current directory in a tree format."
     echo "${COMMAND}nanofzf${RESET} - Edit file using nano with preview using fzf."
     echo "${COMMAND}fd${RESET} - Search files in current directory using fdfind."
     echo "${COMMAND}src${RESET} - Reload .zshrc file."
@@ -104,7 +95,12 @@ _aliases() {
     echo "${COMMAND}brewi <name>${RESET} - Install Homebrew package."
     echo "${COMMAND}brews <name>${RESET} - Search for Homebrew package."
     echo "${COMMAND}brewupdate${RESET} - Update Homebrew packages."
-    echo "${COMMAND}brewrm <name>${RESET} - Uninstall Homebrew package.\n"
+    echo "${COMMAND}brewrm <name>${RESET} - Uninstall Homebrew package."
+    echo "${COMMAND}nvmi <version>${RESET} - Install Node.js version."
+    echo "${COMMAND}nvmilts <version>${RESET} - Install Node.js LTS version."
+    echo "${COMMAND}nvmu <version>${RESET} - Use Node.js version."
+    echo "${COMMAND}nvmults${RESET} - Use Node.js LTS version."
+    echo "${COMMAND}nvmrm <version>${RESET} - Uninstall Node.js version.\n"
 }
 
 # Main
@@ -112,4 +108,4 @@ _aliases() {
 
 clear
 show_datetime
-connectedAs
+welcomeMessage
